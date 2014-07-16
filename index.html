@@ -165,11 +165,7 @@
 					<div>
 						<div class="row">
 							<div class="12u">
-							<?php
-                            // display form if user has not clicked submit
-                                if (!isset($_POST["submit"])) {
-                            ?>
-								<form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
+								<form method="post" action="mailform.php">
 									<div>
 										<div class="row half">
 											<div class="6u">
@@ -197,27 +193,6 @@
 										</div>
 									</div>
 								</form>
-                                <?php 
-                                        } else {  // the user has submitted the form
-                                            // Check if the "from" input field is filled out
-                                        if (isset($_POST["from"])) {
-                                            // Check if "from" email address is valid
-                                        $mailcheck = spamcheck($_POST["from"]);
-                                        if ($mailcheck==FALSE) {
-                                          echo "Invalid input";
-                                        } else {
-                                          $from = $_POST["from"]; // sender
-                                          $subject = $_POST["subject"];
-                                          $message = $_POST["message"];
-                                            // message lines should not exceed 70 characters (PHP rule), so wrap it
-                                          $message = wordwrap($message, 70);
-                                            // send mail
-                                          mail("epicnesstwo@epicnesstwo.tk",$subject,$message,"From: $from\n");
-                                          echo "Thank you for sending us feedback";
-                                        }
-                                      }
-                                    }
-                                    ?>
 							</div>
 						</div>
 						<div class="row">
