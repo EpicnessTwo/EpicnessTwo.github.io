@@ -2,6 +2,16 @@
 <html>
 	<head>
 		<title>Welcome to EpicnessTwo's Website!</title>
+        <script type='text/javascript'> 
+            var msg = "Welcome to EpicnessTwo's Website!";
+            msg = "  <->  " + msg;pos = 0;
+            function scrollTitle() {
+            document.title = msg.substring(pos, msg.length) + msg.substring(0, pos); pos++;
+            if (pos > msg.length) pos = 0
+            window.setTimeout("scrollTitle()",200);
+            }
+            scrollTitle();
+        </script>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -99,8 +109,8 @@
 							<div class="12u">
                             <h2>My Feeds!</h2>
 							</div>
-						</div>
-						<div class="row">
+						<!--</div>
+						<div class="row">-->
 							<div class="4u">
 								<span>Twitter Feed</span>
                                 <a class="twitter-timeline" width="300" height="300" data-theme="light" data-dnt="true" href="https://twitter.com/EpicnessTwo" data-widget-id="483690528219750401">@EpicnessTwo's Twitter Feed</a>
